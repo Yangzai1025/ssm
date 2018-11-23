@@ -1,0 +1,27 @@
+server:
+  context-path: /ssm
+  port: 8989
+  jsp-servlet:
+    init-parameters:
+      development: true
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+mybatis:
+  mapper-locations: com/baizhi/dao/*Dao.xml
+  type-aliases-package: com.baizhi.entity
